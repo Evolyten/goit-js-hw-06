@@ -1,11 +1,10 @@
 const textInputEl = document.querySelector('#name-input')
 const outputEl = document.querySelector('#name-output')
-let n=''
 textInputEl.addEventListener('input', (event) => {
     
-    let k = event.currentTarget.value
-    outputEl.textContent = k;
-      if (k == "") {
+    let currentInput = event.currentTarget.value
+    outputEl.textContent = currentInput;
+      if (currentInput == "") {
         outputEl.textContent="Anonymous"
     }
 })

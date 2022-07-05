@@ -12,7 +12,7 @@ function submitEvent(event) {
     if (email.value === '' || password.value === "") {
         alert('Please note that all fields are required.')
     } 
-    let k = { email: email.value, password: password.value }
-    console.log(k)
+    let userData = { email: email.value, password: password.value }
+    console.log(userData)
     event.currentTarget.reset();
 }

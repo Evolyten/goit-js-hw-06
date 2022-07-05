@@ -17,7 +17,7 @@ blockWrapEl.style.alignItems = 'center'
 
 
 blockCounterEl.addEventListener('blur', (event) => {
-  let k = event.currentTarget.value;
+  let outputData = event.currentTarget.value;
   let array = [];
   let width = 20;
   let height = 20;
@@ -33,14 +33,12 @@ blockCounterEl.addEventListener('blur', (event) => {
       amount=0
     }
   
-  createBtnEl.addEventListener('click',createBoxes(k))
+  createBtnEl.addEventListener('click',createBoxes(outputData))
   destroyBtnEl.addEventListener('click',()=> {
     blockWrapEl.textContent = "";
     blockCounterEl.textContent = "";
   })
-  console.log(array)
    
-    console.log(k)
 
 })
  
