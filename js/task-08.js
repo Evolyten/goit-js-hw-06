@@ -13,6 +13,5 @@ function submitEvent(event) {
         alert('Please note that all fields are required.')
     } 
     let k = { email: email.value, password: password.value }
-    console.log(k)
     event.currentTarget.reset();
 }

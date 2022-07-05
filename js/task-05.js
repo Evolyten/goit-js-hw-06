@@ -9,5 +9,3 @@ textInputEl.addEventListener('input', (event) => {
         outputEl.textContent="Anonymous"
     }
 })
-
-console.log(n)

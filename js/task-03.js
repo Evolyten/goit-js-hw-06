@@ -23,9 +23,7 @@ listEl.style.padding="0"
 
 
 const markup = images.map((img) => `<li class ="gallery-img"><img alt='${img.alt}' src='${img.url}'></li>`).join("")
-console.log(markup)
 listEl.insertAdjacentHTML('beforeend', markup)
 
 const listItemEl = document.querySelectorAll('.gallery-img')
 listItemEl.forEach(n => { const img = n.querySelector('img'); img.style.width = '100%'; img.style.height="180px" })
-console.log(listItemEl)
