@@ -5,9 +5,9 @@ input.addEventListener('blur', (event) => {
     
     if (outputContext.length === 6) {
         input.classList.add('valid');
-        input.classList.toggle('invalid');
+        input.classList.remove('invalid');
 
 
-    } else if(outputContext.length !== 6){ input.classList.toggle('invalid'); }
+    } else if(outputContext.length !== 6){ input.classList.add('invalid'); input.classList.remove('valid'); }
     
 })

@@ -15,7 +15,7 @@ refs.blockWrapEl.style.flexWrap = 'wrap'
 refs.blockWrapEl.style.justifyContent = 'space-between'
 refs.blockWrapEl.style.alignItems = 'center'
 
-const startedData = {
+let startedData = {
   array: [],
   width: 20,
   height: 20,
@@ -28,14 +28,14 @@ refs.blockCounterEl.addEventListener('blur', (event) => {
   startedData.costumerValue = Number(event.currentTarget.value);
 })
 
-  function createBoxes() {
+  function createBoxes(value) {
     if (refs.blockWrapEl.children.length !== 0) {
       refs.blockWrapEl.textContent = ""
     }
     
-    const activeObj = { ...startedData }
+    let activeObj = { ...startedData }
     
-    for (let i = 0; i < activeObj.costumerValue; i++){
+    for (let i = 0; i < value; i++){
       
         activeObj.array[i] = document.createElement('div');
         activeObj.array[i].style.width = `${activeObj.width += 10}px`;
@@ -47,11 +47,15 @@ refs.blockCounterEl.addEventListener('blur', (event) => {
     activeObj = { ...startedData };
     }
   
-refs.createBtnEl.addEventListener('click', createBoxes)  
+refs.createBtnEl.addEventListener('click', () => {
+  createBoxes(startedData.costumerValue)
+})  
 
 refs.destroyBtnEl.addEventListener('click', clearBoxes)
 
 function clearBoxes() {
     refs.blockWrapEl.textContent = "";
     refs.blockCounterEl.value = "";
-  }
+}
+  
+console.log(startedData)
