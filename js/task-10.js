@@ -28,10 +28,8 @@ refs.blockCounterEl.addEventListener('blur', (event) => {
   startedData.costumerValue = Number(event.currentTarget.value);
 })
 
-  function createBoxes(value) {
-    if (refs.blockWrapEl.children.length !== 0) {
-      refs.blockWrapEl.textContent = ""
-    }
+function createBoxes(value) {
+    refs.blockWrapEl.innerHTML = ""
     
     let activeObj = { ...startedData }
     
@@ -43,11 +41,11 @@ refs.blockCounterEl.addEventListener('blur', (event) => {
         activeObj.array[i].style.backgroundColor = getRandomHexColor();
       }
     refs.blockWrapEl.append(...activeObj.array);
-    console.log( refs.blockWrapEl.children.length)
-    activeObj = { ...startedData };
+    startedData.array=[]
     }
   
 refs.createBtnEl.addEventListener('click', () => {
+
   createBoxes(startedData.costumerValue)
 })  
 
@@ -58,4 +56,4 @@ function clearBoxes() {
     refs.blockCounterEl.value = "";
 }
   
-console.log(startedData)
+
